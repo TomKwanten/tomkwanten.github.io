@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <script src="../js/main.js" defer></script>
+    <title>Portfolio</title>
+</head>
+<body>
+    <!-- =============== HEADER =============== -->
+    <header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 dark:bg-zinc-950/80 dark:border-zinc-800 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <!-- logo -->
+                <div class="project-name">
+                    Portfolio
+                </div>
+
+                <!-- navigatie desktop -->
+                <nav class="hidden md:flex items-center gap-6">
+                    <a href="#intro" class="nav-link">Intro</a>
+                    <a href="#about" class="nav-link">Over Mij</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projecten</a>
+                    <a href="#work" class="nav-link">Hoe Werk Ik</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- dark mode + mobile menu knoppen -->
+                <div class="flex items-center gap-2">
+                    <!-- dark mode toggle -->
+                    <button id="themeToggle" 
+                        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        aria-label="Toggle Dark Mode"
+                        type="button"
+                    >   
+                        <svg id="iconSun" class="hidden w-5 h-5 text-gray-700 dark:text-gray-300">
+                            <use href="../assets/icons/icons.svg#icon-sun"></use>
+                        </svg>
+
+                        <svg id="iconMoon" class="w-5 h-5 text-gray-700 dark:text-gray-300">
+                            <use href="../assets/icons/icons.svg#icon-moon"></use>
+                        </svg>
+                    </button>
+
+                    <!-- mobile menu toggle -->
+                    <button id="menuToggle" 
+                        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 md:hidden transition-colors" 
+                        aria-label="Toggle Menu" type="button"
+                        >
+                        <svg id="iconMenu" class="w-5 h-5">
+                            <use href="../assets/icons/icons.svg#icon-menu"></use>
+                        </svg>
+
+                        <svg id="iconClose" class="hidden w-5 h-5">
+                            <use href="../assets/icons/icons.svg#icon-close"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- navigatie mobile -->
+            <nav id="mobileNav" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800 py-4">
+                <a href="#intro" class="nav-link-mobile">Intro</a>
+                <a href="#about" class="nav-link-mobile">Over Mij</a>
+                <a href="#skills" class="nav-link-mobile">Skills</a>
+                <a href="#projects" class="nav-link-mobile">Projecten</a>
+                <a href="#work" class="nav-link-mobile">Hoe Werk Ik</a>
+                <a href="#contact" class="nav-link-mobile">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <!-- =============== INTRO =============== -->
+        <section id="intro" class="min-h-screen flex items-center py-20 bg-gradient-to-b from-white to-gray-300 dark:from-gray-900 dark:to-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- tekst links -->
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <p class="text-lg text-gray-600 dark:text-gray-400">
+                                Hallo, ik ben
+                            </p>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white">
+                                Tom Kwanten
+                            </h1>
+                            <h2 class="text-2xl sm:text-3xl text-blue-600 dark:text-blue-400 font-semibold">
+                                Junior Full-Stack Developer
+                            </h2> <!-- hier komt typing effect later -->
+                            <p class="text-lg text-gray-600 dark:text-gray-400 pt-4">
+                                Full-stack developer in opleiding met een diploma in Digitale Vormgeving.
+                            </p>
+                        </div>
+                        
+                        <!-- skill badges -->
+                        <div class="flex flex-wrap gap-3 pt-4">
+                            <span class="tech-stack bg-orange-500">HTML</span>
+                            <span class="tech-stack bg-blue-500">CSS</span>
+                            <span class="tech-stack bg-purple-500">PHP</span>
+                            <span class="tech-stack bg-pink-500">UX/UI Design</span>
+                        </div>
+
+                        <!-- CTA buttons -->
+                        <div class="flex flex-wrap gap-4 pt-6">
+                            <a
+                                href="#projects"
+                                class="btn btn-primary"
+                            >
+                                <svg class="btn-icon">
+                                    <use href="../assets/icons/icons.svg#icon-folder-open"></use>
+                                </svg>
+                                Mijn Projecten
+                            </a>
+
+                            <a
+                                href="../assets/cv-tom-kwanten.pdf" 
+                                download 
+                                class="btn btn-secondary"
+                            >
+                                <svg class="btn-icon">
+                                    <use href="../assets/icons/icons.svg#icon-download"></use>
+                                </svg>
+                                Download CV
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- profiel foto rechts -->
+                    <div class="flex justify-center md:justify-end">
+                        <div class="relative">
+                            <div class="animate-pulse absolute inset-0 bg-blue-500 dark:bg-blue-400 rounded-full blur-3xl opacity-20"></div> <!-- glow achter profiel foto -->
+                            <img 
+                                src="../assets/1727002208104.jpg" 
+                                alt="Profiel Foto"
+                                class="relative rounded-full w-64 h-64 sm:h-80 sm:h-80 lg:w-96 lg:h-96 object-cover border-4 border-white dark:border:bg-gray-800 shadow-xl"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </section>
+
+        <!-- =============== OVER MIJ =============== -->
+        <section id="about" class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Over Mij
+                    </h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <!-- over mij content -->
+                    <div class="grid md:grid-cols-3 gap-8 mb-16">
+                        <div class="about-content">
+                            <h3 class="about-h3">
+                                Wie ben ik?
+                            </h3>
+                            <p class="about-p">
+                                Een gedreven junior full-stack developer met een passie voor het 
+                                bouwen van gebruiksvriendelijke en visueel aantrekkelijke 
+                                webapplicaties.
+                            </p>
+                        </div>
+
+                        <div class="about-content">
+                            <h3 class="about-h3">Wat vind ik leuk?</h3>
+                            <p class="about-p">
+                                Ik geniet van het oplossen van complexe problemen, 
+                                het leren van nieuwe technologieën, 
+                                en het creëren van intuïtieve user experiences.
+                            </p>
+                        </div>
+
+                        <div class="about-content">
+                            <h3 class="about-h3">Wat zoek ik?</h3>
+                            <p class="about-p">
+                                Een uitdagende rol als full-stack developer waar ik kan groeien, 
+                                leren en bijdragen aan innovatieve projecten.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- traject content -->
+                    <div class="space-y-8">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-12">
+                            Mijn Traject
+                        </h3>
+                        <div class="relative max-w-5xl mx-auto">
+                            <!-- tijdlijn lijn -->
+                            <div class="absolute left-10 top-0 bottom-0 w-1 bg-gray-300 dark:bg-gray-700 md:left-1/2"></div>
+                            
+                            <!-- card 1 -->
+                            <div class="traject-card">
+                                <!-- icon midden -->
+                                <div class="flex justify-center md:col-start-2">
+                                    <div class="traject-image bg-blue-500">
+                                        <svg class="traject-svg" viewBox="0 0 24 24" aria-hidden="true">
+                                            <use href="../assets/icons/icons.svg#icon-graduation-cap"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <!-- content rechts -->
+                                <div class="traject-content md:col-start-3 lg:pl-20 md:text-left">
+                                    <span class="traject-card-span">2020 - 2024</span>
+                                    <h4 class="traject-card-title">Digitale Vormgeving</h4>
+                                    <p class="traject-card-p">Hogeschool PXL, Hasselt</p>  
+                                </div>
+                            </div>
+                            
+                            <!-- card 2 -->
+                            <div class="traject-card">
+                                <div class="flex justify-center md:col-start-2">
+                                    <div class="traject-image bg-purple-500">
+                                        <svg class="traject-svg" viewBox="0 0 24 24" aria-hidden="true">
+                                            <use href="../assets/icons/icons.svg#icon-code-brackets"></use>
+                                        </svg>
+                                    </div>
+                                </div>    
+                                
+                                <div class="traject-content md:col-start-1 md:row-start-1 lg:pr-20 md:text-right md:justify-self-end">
+                                    <span class="traject-card-span">2024 - heden</span>
+                                    <h4 class="traject-card-title">Full-Stack Development</h4>
+                                    <p class="traject-card-p">VDAB, Thor Park Genk</p>
+                                </div>
+                            </div>
+                            
+                            <!-- card 3 -->
+                            <div class="traject-card">
+                                <div class="flex justify-center md:col-start-2">
+                                    <div class="traject-image bg-green-500">
+                                        <svg class="traject-svg" viewBox="0 0 24 24" aria-hidden="true">
+                                            <use href="../assets/icons/icons.svg#icon-rocket"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="traject-content md:col-start-3 lg:pl-20">
+                                    <span class="traject-card-span">Toekomst</span>
+                                    <h4 class="traject-card-title">Eerste Job als developer</h4>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============== SKILLS =============== -->
+        <section id="skills" class="py-20 bg-gray-300 dark:bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Skills
+                    </h2>
+                    <div class="title-underline"></div>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        Een overzicht van mijn technische vaardigheden
+                    </p>
+                </div>
+                    
+                <!-- tabs: front-end, back-end, design -->
+                <div class="max-w-4xl mx-auto mb-12">
+                    <div class="grid grid-cols-3 bg-gray-400 dark:bg-gray-900 rounded-full p-1">
+                        <button class="tab-btn active-tab" onclick="openTab('frontend')">
+                            <svg class="skill-icon text-blue-600" viewBox="0 0 24 24" aria-hidden="true">
+                                <use href="../assets/icons/icons.svg#icon-code-brackets"></use>
+                            </svg>
+                            Front-end
+                        </button>
+                        <button class="tab-btn" onclick="openTab('backend')">
+                            <svg class="skill-icon text-green-600" viewBox="0 0 24 24" aria-hidden="true">
+                                <use href="../assets/icons/icons.svg#icon-database"></use>
+                            </svg>
+                            Back-end
+                        </button>
+                        <button class="tab-btn" onclick="openTab('design')">
+                            <svg class="skill-icon text-orange-600" viewBox="0 0 24 24" aria-hidden="true">
+                                <use href="../assets/icons/icons.svg#icon-palette"></use>
+                            </svg>
+                            Design
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- tabs-content -->
+                <div class="mx-auto max-w-4xl px-4">
+                    <!-- frontend tab inhoud -->
+                    <div id="frontend" class="tab-content">
+                        <!-- html -->   
+                        <div>
+                            <div class="skill-header">
+                                <div class="skill-label">
+                                    <svg class="skill-icon text-orange-600" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-html"></use>
+                                    </svg>
+                                    <span class="skill-name">
+                                        HTML
+                                    </span>
+                                </div>
+                                <div class="skill-percentage">
+                                    90%
+                                </div>
+                            </div>
+
+                            <!-- progress bar -->
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 90%;">
+                                </div>
+                            </div>
+                        </div>                 
+                        
+                        <!-- css -->
+                        <div>
+                            <div class="skill-header">
+                                <div class="skill-label">
+                                    <svg class="skill-icon text-blue-500" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-css"></use>
+                                    </svg>
+                                    <span class="skill-name">
+                                        CSS
+                                    </span>
+                                </div>
+                                <div class="skill-percentage">
+                                    90%
+                                </div>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 90%;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- JavaScript -->
+                        <div>
+                            <div class="skill-header">
+                                <div class="skill-label">
+                                    <svg class="skill-icon text-yellow-400" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-js"></use>
+                                    </svg>
+                                    <span class="skill-name">
+                                        JavaScript
+                                    </span>
+                                </div>
+                                <div class="skill-percentage">
+                                    75%
+                                </div>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 75%;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vue -->
+                        <div>
+                            <div class="skill-header">
+                                <div class="skill-label">
+                                    <svg class="skill-icon text-orange-600" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-vuejs"></use>
+                                    </svg>
+                                    <span class="skill-name">
+                                        VueJs
+                                    </span>
+                                </div>
+                                <div class="skill-percentage">
+                                    50%
+                                </div>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 50%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- backend tab inhoud -->
+                    <div id="backend" class="tab-content hidden">
+                        <!-- php -->   
+                        <div>
+                            <div class="skill-header">
+                                <div class="skill-label">
+                                    <svg class="skill-icon text-orange-600" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-php"></use>
+                                    </svg>
+                                    <span class="skill-name">
+                                        PHP
+                                    </span>
+                                </div>
+                                <div class="skill-percentage">
+                                    75%
+                                </div>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 75%;">
+                                </div>
+                            </div>
+                        </div>                 
+                        
+                        <!-- Laravel -->
+                        <div>
+                            <div class="skill-header">
+                                <div class="skill-label">
+                                    <svg class="skill-icon text-orange-600" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-laravel"></use>
+                                    </svg>
+                                    <span class="skill-name">
+                                        Laravel
+                                    </span>
+                                </div>
+                                <div class="skill-percentage">
+                                    80%
+                                </div>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 80%;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- MySQL -->
+                        <div>
+                            <div class="skill-header">
+                                <div class="skill-label">
+                                    <svg class="skill-icon text-orange-600" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-mysql"></use>
+                                    </svg>
+                                    <span class="skill-name">
+                                        MySQL
+                                    </span>
+                                </div>
+                                <div class="skill-percentage">
+                                    90%
+                                </div>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 90%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- desing tab inhoud -->
+                    <div id="design" class="tab-content hidden">
+                        <!-- Adobe XD -->   
+                        <div>
+                            <div class="skill-header">
+                                <div class="skill-label">
+                                    <svg class="skill-icon text-orange-600" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-xd"></use>
+                                    </svg>
+                                    <span class="skill-name">
+                                        Adobe XD
+                                    </span>
+                                </div>
+                                <div class="skill-percentage">
+                                    75%
+                                </div>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 75%;">
+                                </div>
+                            </div>
+                        </div>                 
+                        
+                        <!-- Figma -->
+                        <div>
+                            <div class="skill-header">
+                                <div class="skill-label">
+                                    <svg class="skill-icon text-orange-600" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-figma"></use>
+                                    </svg>
+                                    <span class="skill-name">
+                                        Figma
+                                    </span>
+                                </div>
+                                <div class="skill-percentage">
+                                    80%
+                                </div>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 80%;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Photoshop -->
+                        <div>
+                            <div class="skill-header">
+                                <div class="skill-label">
+                                    <svg class="skill-icon text-orange-600" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-ps"></use>
+                                    </svg>
+                                    <span class="skill-name">
+                                        Photoshop
+                                    </span>
+                                </div>
+                                <div class="skill-percentage">
+                                    60%
+                                </div>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 60%;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Illustrator -->
+                        <div>
+                            <div class="skill-header">
+                                <div class="skill-label">
+                                    <svg class="skill-icon text-orange-600" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-ai"></use>
+                                    </svg>
+                                    <span class="skill-name">
+                                        Illustrator
+                                    </span>
+                                </div>
+                                <div class="skill-percentage">
+                                    70%
+                                </div>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 70%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============== PROJECTEN =============== -->
+        <section id="projects" class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Projecten
+                    </h2>
+                    <div class="title-underline"></div>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        Een selectie van mijn recente projecten die mijn vaardigheden tonen
+                    </p>
+                </div>
+
+                <!-- projecten -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- project 1 -->
+                    <div class="project-group-content group">
+                        <!-- project image -->
+                        <div class="relative overflow-hidden h-48">
+                            <img 
+                                src="../assets/test.png" 
+                                alt="Project 1 Screenshot"
+                                class="project-image"
+                            >
+                            <div class="project-overlay">
+                                <a  
+                                    href="#"
+                                    class="btn-project btn-project-primary"
+                                >
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-link"></use>
+                                    </svg>
+                                    Live Demo   
+                                </a>
+                                <a
+                                    href="#"
+                                    class="btn-project btn-project-outline"
+                                >
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-github"></use>
+                                    </svg>
+                                    Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- project content -->
+                        <div class="project-content">
+                            <h3 class="project-name">
+                                Project Naam 1
+                            </h3>
+                            <p class="project-info">
+                                Korte beschrijving van het project en de gebruikte technologieën.
+                            </p>
+
+                            <!-- tech stack -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="project-tech-stack">HTML</span>
+                                <span class="project-tech-stack">CSS</span>
+                                <span class="project-tech-stack">JS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- project 2 -->
+                    <div class="project-group-content group">
+                        <!-- project image -->
+                        <div class="relative overflow-hidden h-48">
+                            <img 
+                                src="../assets/test.png" 
+                                alt="Project 2 Screenshot"
+                                class="project-image"
+                            >
+                            <div class="project-overlay">
+                                <a  
+                                    href="#"
+                                    class="btn-project btn-project-primary"
+                                >
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-link"></use>
+                                    </svg>
+                                    Live Demo   
+                                </a>
+                                <a
+                                    href="#"
+                                    class="btn-project btn-project-outline"
+                                >
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-github"></use>
+                                    </svg>
+                                    Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- project content -->
+                        <div class="p-6 space-y-4">
+                            <h3 class="project-name">
+                                Project Naam 2
+                            </h3>
+                            <p class="project-info">
+                                Korte beschrijving van het project en de gebruikte technologieën.
+                            </p>
+
+                            <!-- tech stack -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="project-tech-stack">HTML</span>
+                                <span class="project-tech-stack">CSS</span>
+                                <span class="project-tech-stack">JS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- project 3 -->
+                    <div class="project-group-content group">
+                        <!-- project image -->
+                        <div class="relative overflow-hidden h-48">
+                            <img 
+                                src="../assets/test.png" 
+                                alt="Project 3 Screenshot"
+                                class="project-image"
+                            >
+                            <div class="project-overlay">
+                                <a  
+                                    href="#"
+                                    class="btn-project btn-project-primary"
+                                >
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-link"></use>
+                                    </svg>
+                                    Live Demo   
+                                </a>
+                                <a
+                                    href="#"
+                                    class="btn-project btn-project-outline"
+                                >
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-github"></use>
+                                    </svg>
+                                    Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- project content -->
+                        <div class="p-6 space-y-4">
+                            <h3 class="project-name">
+                                Project Naam 3
+                            </h3>
+                            <p class="project-info">
+                                Korte beschrijving van het project en de gebruikte technologieën.
+                            </p>
+
+                            <!-- tech stack -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="project-tech-stack">HTML</span>
+                                <span class="project-tech-stack">CSS</span>
+                                <span class="project-tech-stack">JS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- github link -->
+                <div class="text-center">
+                    <a
+                        href="a"
+                        class="btn-project btn-outline"
+                    >
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+                            <use href="../assets/icons/icons.svg#icon-github"></use>
+                        </svg>
+                        Bekijk meer projecten op GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============== HOE WERK IK =============== -->
+        <section id="work" class="py-20 bg-gray-300 dark:bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Hoe werk ik
+                    </h2>
+                    <div class="title-underline"></div>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        Mijn gestructureerde aanpak voor het realiseren van succesvolle projecten
+                    </p>
+                </div>
+
+                <!-- work-cards -->
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16">
+                        <!-- card 1 -->
+                        <div class="relative">
+                            <!-- tijdlijn lijn -->
+                            <div class="tijdlijn-horizontaal"></div>
+                                
+                            <!-- card -->
+                            <div class="work-card">
+                                <!-- nummer badge -->
+                                <div class="work-card-number">
+                                01
+                                </div>
+
+                                <!-- icon -->
+                                <div class="bg-yellow-500 work-card-icon">
+                                    <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-lightbuld"></use>
+                                    </svg>
+                                </div>
+
+                                <!-- content -->
+                                <h3 class="work-card-title">
+                                    Analyse & Idee
+                                </h3>
+                                <p class="work-card-text">
+                                    Ik begin met het begrijpen van wat er nodig is 
+                                    en ga brainstormen over een oplossing
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- card 2 -->
+                        <div class="relative">
+                            <!-- tijdlijn lijn -->
+                            <div class="tijdlijn-horizontaal"></div>
+                                
+                            <!-- card -->
+                            <div class="work-card">
+                                <!-- nummer badge -->
+                                <div class="work-card-number">
+                                02
+                                </div>
+
+                                <!-- icon -->
+                                <div class="bg-pink-500 work-card-icon">
+                                    <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-palette"></use>
+                                    </svg>
+                                </div>
+
+                                <!-- content -->
+                                <h3 class="work-card-title">
+                                    Design & UX
+                                </h3>
+                                <p class="work-card-text">
+                                    Vervolgens maak ik wireframes en designs met focus 
+                                    op gebruiksvriendelijkheid en esthetiek.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- card 3 -->
+                        <div class="relative">
+                            <!-- tijdlijn lijn -->
+                            <div class="tijdlijn-horizontaal"></div>
+                                
+                            <!-- card -->
+                            <div class="work-card">
+                                <!-- nummer badge -->
+                                <div class="work-card-number">
+                                03
+                                </div>
+
+                                <!-- icon -->
+                                <div class="bg-blue-500 work-card-icon">
+                                    <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-code-brackets"></use>
+                                    </svg>
+                                </div>
+
+                                <!-- content -->
+                                <h3 class="work-card-title">
+                                    Ontwikkeling
+                                </h3>
+                                <p class="work-card-text">
+                                    Ik bouw de applicatie met schone, 
+                                    onderhoudbare code en best practices.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- card 4 -->
+                        <div class="relative">
+                            <!-- card -->
+                            <div class="work-card">
+                                <!-- nummer badge -->
+                                <div class="work-card-number">
+                                04
+                                </div>
+
+                                <!-- icon -->
+                                <div class="bg-green-500 work-card-icon">
+                                    <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-check-circle"></use>
+                                    </svg>
+                                </div>
+
+                                <!-- content -->
+                                <h3 class="work-card-title">
+                                    Testing & Afwerking
+                                </h3>
+                                <p class="work-card-text">
+                                    Tot slot test ik grondig, fix bugs en zorg ik 
+                                    voor een gepolijst eindresultaat.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============== CONTACT =============== -->
+        <section id="contact" class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Contact
+                    </h2>
+                    <div class="title-underline"></div>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        Heb je een vraag of wil je samenwerken? Neem gerust contact met me op!
+                    </p>
+                </div>
+
+                <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                                Contactgegevens
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-8">
+                                Ik sta altijd open voor nieuwe uitdagingen en samenwerkingen. 
+                                Stuur me een bericht of neem direct contact op via onderstaande gegevens.
+                            </p>
+                        </div>
+
+                        <!-- contact info -->
+                        <div class="space-y-6">
+
+                            <!-- email -->
+                            <a href="mailto:tomkwanten2001@gmail.com" class="contact-info-link group">
+                                <div class="contact-icon">
+                                    <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-mail"></use>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="contact-info-label">
+                                        Email
+                                    </p>
+                                    <p class="contact-info-value">
+                                        tomkwanten2001@gmail.com
+                                    </p>
+                                </div>
+                            </a>
+
+                            <!-- Telefoon -->
+                            <a href="tel:+32471873250" class="contact-info-link group">
+                                <div class="contact-icon">
+                                    <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-phone"></use>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="contact-info-label">
+                                        Telefoon
+                                    </p>
+                                    <p class="contact-info-value">
+                                        +32 471 87 32 50
+                                    </p>
+                                </div>
+                            </a>
+
+                            <!-- locatie -->
+                            <a href="#" class="contact-info-link group">
+                                <div class="contact-icon">
+                                    <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-location"></use>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="contact-info-label">
+                                        Locatie
+                                    </p>
+                                    <p class="contact-info-value">
+                                        As, België
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- contact form -->
+                    <div class="bg-gray-200 dark:bg-gray-800 rounded-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                            Stuur een Bericht
+                        </h3>
+                        <form action="/contact.php" method="POST" class="space-y-6">
+                            <div>
+                                <label 
+                                    for="name"
+                                    class="contact-form-label"
+                                >
+                                    Naam
+                                </label>
+                                <input 
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Jouw naam"
+                                    required
+                                    class="input"
+                                >
+                            </div>
+
+                            <div>
+                                <label 
+                                    for="email"
+                                    class="contact-form-label"
+                                >
+                                    Email
+                                </label>
+                                <input 
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="jouw.email@example.com"
+                                    required
+                                    class="input"
+                                >
+                            </div>
+
+                            <div>
+                                <label 
+                                    for="message"
+                                    class="contact-form-label"
+                                >
+                                    Bericht
+                                </label>
+                                <textarea 
+                                    name="message" 
+                                    id="message"
+                                    placeholder="Jouw bericht..."
+                                    required
+                                    rows="5"
+                                    class="textarea"
+                                ></textarea>
+                            </div>
+
+                            <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <use href="../assets/icons/icons.svg#icon-send"></use>
+                                </svg>
+                                Verstuur bericht
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============== LETS CONNECT =============== -->
+        <section id="connect" class="py-20 bg-gradient-to-b from-gray-300 to-white dark:from-gray-800 dark:to-gray-900">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Laten we verbinden
+                    </h2>
+                    <div class="title-underline"></div>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        Volg me op social media of download mijn CV om meer over mijn werk te weten te komen
+                    </p>
+                </div>
+
+                <!-- downlad cv knop -->
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex justify-center mb-12">
+                        <a class="btn btn-primary" href="../assets/cv-tom-kwanten.pdf" download>
+                            <svg class="btn-icon">
+                                <use href="../assets/icons/icons.svg#icon-download"></use>
+                            </svg>
+                            Download CV
+                        </a>
+                    </div>
+                    
+                    <!-- social links -->
+                    <div class="grid sm:grid-cols-3 gap-6">
+                        <!-- github -->
+                        <a 
+                            href="https://github.com/dashboard" 
+                            target="_blank" 
+                            class="social-link group"
+                        >
+                            <div class="social-link-icon-wrapper">
+                                <svg class="social-link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <use href="../assets/icons/icons.svg#icon-github"></use>
+                                </svg>
+                            </div>
+                            <span class="social-link-text">
+                                GitHub
+                            </span>
+                        </a>
+
+                        <!-- linkedin -->
+                        <a 
+                            href="https://www.linkedin.com/in/tom-kwanten/" 
+                            target="_blank" 
+                            class="social-link group"
+                        >
+                            <div class="social-link-icon-wrapper">
+                                <svg class="social-link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <use href="../assets/icons/icons.svg#icon-linkedin"></use>
+                                </svg>
+                            </div>
+                            <span class="social-link-text">
+                                LinkedIn
+                            </span>
+                        </a>
+
+                        <!-- email -->
+                        <a 
+                            href="mailto:tomkwanten2001@gmail.com" 
+                            class="social-link group"
+                        >
+                            <div class="social-link-icon-wrapper">
+                                <svg class="social-link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <use href="../assets/icons/icons.svg#icon-mail"></use>
+                                </svg>
+                            </div>
+                            <span class="social-link-text">
+                                Email
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============== FOOTER =============== -->
+        <footer class="dark:bg-gray-900 text-white py-8">
+            <div class="contaier mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col items-center justify-center gap-4">
+                    <p class="text-center text-gray-900 dark:text-gray-400">
+                        &copy; 2026 Portfolio. Alle rechten voorbehouden.
+                    </p>
+                    <p class="text-center text-gray-700 dark:text-gray-400 text-sm">
+                        Gemaakt door Tom Kwanten
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
