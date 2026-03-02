@@ -1,3 +1,5 @@
+window.addEventListener('error', (e) => console.log('JS error:', e.message));
+
 // ===== THEME (dark/light) =====
 const root = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
@@ -17,8 +19,11 @@ if (themeToggle && iconSun && iconMoon) {
 
     // laad opgeslagen thema of systeem voorkeur
     const saved = localStorage.getItem('theme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(saved ?? (systemDark ? 'dark' : 'light'));
+    if (saved) {
+        setTheme(saved);
+    } else {
+        setTheme('dark');
+    }
 
     themeToggle.addEventListener('click', () => {
         const nowDark = root.classList.contains('dark');
@@ -27,11 +32,12 @@ if (themeToggle && iconSun && iconMoon) {
 }
 
 // ===== MOBILE MENU =====
+const menuToggle = document.getElementById('menuToggle');
+const mobileNav = document.getElementById('mobileNav');
+const iconMenu = document.getElementById('iconMenu');
+const iconClose = document.getElementById('iconClose');
+
 if (menuToggle && mobileNav && iconMenu && iconClose) {
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    const iconMenu = document.getElementById('iconMenu');
-    const iconClose = document.getElementById('iconClose');
 
     menuToggle.addEventListener('click', () => {
         const isOpen = !mobileNav.classList.contains('hidden');
@@ -62,7 +68,7 @@ if (menuToggle && mobileNav && iconMenu && iconClose) {
 }
 
 // ===== TABS =====
-function openTab(tabName) {
+function openTab(event, tabName) {
     // actieve knop wisselen
     const tabs = document.querySelectorAll('.tab-btn');
     tabs.forEach(tab => tab.classList.remove('active-tab'));
